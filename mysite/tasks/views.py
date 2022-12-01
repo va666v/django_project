@@ -17,6 +17,7 @@ def date_time(request):
     return HttpResponse(f"<h1 style='text-align:center; background-color:DodgerBlue'> <b>{datetime.now()}</b> </h1>")
 
 def task_page(request):
-    dect = {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11: 121, 12: 144, 13: 169, 14: 196, 15: 225}
-    for key, value in dect.items:
-        return HttpResponse(f"<li>{key} : {value}</li>")
+    dict_ = {}
+    for i in range(1, 16):
+        dict_[i] = (i**2)
+    return HttpResponse(f"{str(dict_)}")
